@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TroopTower : MonoBehaviour
 {
-    float troopAmount;
+    public float troopAmount;
     Text troopText;
 
     float troopIncrease;
@@ -14,8 +14,8 @@ public class TroopTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        troopAmount = 0;
         troopText = transform.GetChild(0).GetComponent<Text>();
+        troopText.text = ((int)troopAmount).ToString();
 
         troopIncrease = 0.5f;
         maxTroopAmount = 50f;
@@ -24,11 +24,27 @@ public class TroopTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.CompareTag("Blue")) {
+        if (gameObject.CompareTag("Blue") && troopAmount <= maxTroopAmount) {
             troopAmount += troopIncrease * Time.deltaTime;
             troopText.text = ((int)troopAmount).ToString();
         }
+    }
 
-        troopAmount = Mathf.Clamp(troopAmount, 0, maxTroopAmount);
+    public int GetTroopAmount() {
+        return (int)troopAmount;
+    }
+
+    // Increase or Descrease Amount of Troops in Tower
+    // Increase (Change = true) | Decrease (Change = false)
+    public void ChangeTroopAmount(int amount, bool change) {
+        if (!change) amount *= -1;
+
+        if (troopAmount + amount < 0 && !CompareTag("Blue")) {
+            tag = "Blue";
+            GetComponent<Image>().color = Color.blue;
+        }
+
+        troopAmount = Mathf.Abs(troopAmount + amount);
+        troopText.text = ((int)troopAmount).ToString();
     }
 }
