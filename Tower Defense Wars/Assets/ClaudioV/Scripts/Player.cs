@@ -13,10 +13,19 @@ public class Player : MonoBehaviour
 
     GameObject selectedTower;
 
+    [Header("Percentage Buttons")]
+    public Button fullButton;
+    public Button threeFourthButton;
+    public Button halfButton;
+    public Button oneFourthButton;
+
+    float troopPercentage;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        fullButton.image.color = Color.green;
+        troopPercentage = 1f;
     }
 
     // Update is called once per frame
@@ -46,10 +55,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SetTroopPercentage(float percent) {
+        troopPercentage = percent;
+    }
+
+    public void SetPercentColor(Button button) {
+        fullButton.image.color = Color.white;
+        threeFourthButton.image.color = Color.white;
+        halfButton.image.color = Color.white;
+        oneFourthButton.image.color = Color.white;
+
+        button.image.color = Color.green;
+    }
+
     void SendTroops(TroopTower fromTower, GameObject toTower) {
         GameObject currTroops = Instantiate(troops, fromTower.transform.position, Quaternion.identity, troopsParent);
 
         int troopAmount = fromTower.GetTroopAmount();
+
+        troopAmount = (int)(troopAmount * troopPercentage);
+
         fromTower.ChangeTroopAmount(troopAmount, false);
 
         currTroops.GetComponent<Troops>().SpawnTroops(troopAmount, toTower);
