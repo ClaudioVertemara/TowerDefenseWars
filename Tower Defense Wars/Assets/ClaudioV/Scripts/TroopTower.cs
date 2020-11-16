@@ -1,50 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
+/* [Troop Tower Script]
+ * Towers that Spawn Troops
+ */
 
 public class TroopTower : MonoBehaviour
 {
-    public float troopAmount;
-    Text troopText;
+    Tower tower;
 
     float troopIncrease;
-    float maxTroopAmount;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        troopText = transform.GetChild(0).GetComponent<Text>();
-        troopText.text = ((int)troopAmount).ToString();
-
-        troopIncrease = 0.5f;
-        maxTroopAmount = 50f;
+    void Awake() {
+        tower = GetComponent<Tower>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.CompareTag("Blue") && troopAmount <= maxTroopAmount) {
-            troopAmount += troopIncrease * Time.deltaTime;
-            troopText.text = ((int)troopAmount).ToString();
+        // Spawn Troops if Tower Owned & Troop Spawn Limit Not Reached
+        if (CompareTag("Blue") && tower.troopAmount <= tower.maxTroopAmount) {
+            tower.troopAmount += troopIncrease * Time.deltaTime;
+            tower.UpdateTroopText();
         }
     }
 
-    public int GetTroopAmount() {
-        return (int)troopAmount;
-    }
-
-    // Increase or Descrease Amount of Troops in Tower
-    // Increase (Change = true) | Decrease (Change = false)
-    public void ChangeTroopAmount(int amount, bool change) {
-        if (!change) amount *= -1;
-
-        if (troopAmount + amount < 0 && !CompareTag("Blue")) {
-            tag = "Blue";
-            GetComponent<Image>().color = Color.blue;
+    // Update Amount of Troops are Spawned (Based on Troop Type)
+    public void UpdateIncreaseAmount() {
+        if (tower.troopType == "F") {
+            troopIncrease = 0.5f;
+        } else {
+            troopIncrease = 0.25f;
         }
-
-        troopAmount = Mathf.Abs(troopAmount + amount);
-        troopText.text = ((int)troopAmount).ToString();
     }
 }
