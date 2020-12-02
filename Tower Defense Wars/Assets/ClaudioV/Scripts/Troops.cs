@@ -19,7 +19,7 @@ public class Troops : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        troopsAmountText = transform.GetChild(0).GetComponent<Text>();
+        troopsAmountText = transform.GetChild(1).GetComponent<Text>();
 
         troopsAmount = 0;
         troopsType = "F";
@@ -41,6 +41,14 @@ public class Troops : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, toTower.transform.position, speed);
+
+        // Rotate Troops Ship to Face Tower
+        Vector3 target = Vector3.zero;
+        target.x = toTower.transform.position.x - transform.position.x;
+        target.y = toTower.transform.position.y - transform.position.y;
+
+        float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
 
         // Troops Arrived at Tower
         if (transform.position == toTower.transform.position) {
