@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 1076322122}
   - component: {fileID: 1076322125}
   m_Layer: 0
-  m_Name: Red Rocket Base
+  m_Name: Red Rocket Flying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 1466414939}
   - component: {fileID: 1466414940}
   m_Layer: 0
-  m_Name: Blue Rocket Base
+  m_Name: Blue Rocket Flying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
