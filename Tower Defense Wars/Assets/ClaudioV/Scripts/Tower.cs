@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.Animations;
 
 /* [Tower Script]
  * Contains Troop Info
@@ -29,30 +28,22 @@ public class Tower : MonoBehaviour
     public string troopType;
     Text troopTypeText;
 
-    public Sprite blueStation;
-    public Sprite redStation;
-    public AnimatorController blueTwinkle;
-    public AnimatorController redTwinkle;
-    GameObject towerImage;
-
     // Start is called before the first frame update
     void Start() {
         troopTower = GetComponent<TroopTower>();
 
-        towerMenu = transform.GetChild(3).gameObject;
+        towerMenu = transform.GetChild(2).gameObject;
         towerMenu.SetActive(false);
 
-        troopAmountText = transform.GetChild(1).GetComponent<Text>();
+        troopAmountText = transform.GetChild(0).GetComponent<Text>();
         troopAmountText.text = ((int)troopAmount).ToString();
 
         troopType = "F";
-        troopTypeText = transform.GetChild(2).GetComponent<Text>();
+        troopTypeText = transform.GetChild(1).GetComponent<Text>();
         if (!CompareTag("Blue")) troopTypeText.text = "";
 
         troopTower.UpdateIncreaseAmount();
         maxTroopAmount = 50f;
-
-        towerImage = transform.GetChild(0).gameObject;
     }
 
     public int GetTroopAmount() {
@@ -77,9 +68,7 @@ public class Tower : MonoBehaviour
         // Tower Got Taken Over
         if (troopAmount + amount < 0 && !CompareTag("Blue")) {
             tag = "Blue";
-            //GetComponent<Image>().color = Color.blue;
-            towerImage.GetComponent<Image>().sprite = blueStation;
-            towerImage.GetComponent<Animator>().runtimeAnimatorController = blueTwinkle;
+            GetComponent<Image>().color = Color.blue;
 
             SetTroopType(type);
             troopTower.UpdateIncreaseAmount();
