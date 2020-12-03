@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             // Background Clicked On
             selection.SetActive(false);
             selection2.SetActive(false);
-
+            
             if (selectedTower != null) {
                 selectedTower.GetComponent<Tower>().towerMenu.SetActive(false);
             }
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             } else {
                 // 2nd Tower Selected (Send Troops)
                 selection2.SetActive(true);
-                selection2.transform.position = obj.transform.position;
+                selection2.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, selection2.transform.position.z);
 
                 selectedTower.GetComponent<Tower>().towerMenu.SetActive(false);
 
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
             selection.SetActive(true);
             selection2.SetActive(false);
-            selection.transform.position = obj.transform.position;
+            selection.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, selection.transform.position.z);
         }
     }
 
