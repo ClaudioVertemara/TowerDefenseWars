@@ -19,11 +19,11 @@ public class Troops : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        troopsAmountText = transform.GetChild(1).GetComponent<Text>();
+        troopsAmountText = transform.GetChild(0).GetComponent<Text>();
 
         troopsAmount = 0;
         troopsType = "F";
-        SetSpeed();
+        speed = 0.2f;
     }
 
     // Called when Troops are Spawned, Sets Troops Info Up
@@ -40,16 +40,7 @@ public class Troops : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 target = new Vector3(toTower.transform.position.x, toTower.transform.position.y, 0.5f);
-        transform.position = Vector3.MoveTowards(transform.position, toTower.transform.position, speed * Time.deltaTime);
-
-        // Rotate Troops Ship to Face Tower
-        Vector3 rtarget = Vector3.zero;
-        rtarget.x = toTower.transform.position.x - transform.position.x;
-        rtarget.y = toTower.transform.position.y - transform.position.y;
-
-        float angle = Mathf.Atan2(rtarget.y, rtarget.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        transform.position = Vector3.MoveTowards(transform.position, toTower.transform.position, speed);
 
         // Troops Arrived at Tower
         if (transform.position == toTower.transform.position) {
@@ -68,9 +59,9 @@ public class Troops : MonoBehaviour
     // Change Speed (Based on Troop Type)
     void SetSpeed() {
         if (troopsType == "F") {
-            speed = 1f;
+            speed = 0.2f;
         } else if (troopsType == "S") {
-            speed = 0.5f;
+            speed = 0.1f;
         }
     }
 }
