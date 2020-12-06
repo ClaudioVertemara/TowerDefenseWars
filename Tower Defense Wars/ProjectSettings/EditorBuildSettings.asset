@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/JosueG/Scenes/JGScene.unity
+    path: Assets/JosueG/Scenes/MenuScene.unity
     guid: cad57e47bcd84d04d9b8caf2483118f4
   - enabled: 1
     path: Assets/ClaudioV/CVScene.unity
