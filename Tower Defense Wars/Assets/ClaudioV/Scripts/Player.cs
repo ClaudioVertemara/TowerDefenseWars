@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fullButton.image.color = Color.green;
+        fullButton.image.color = new Color(0, 1, 0.5681005f, 1);
         troopPercentage = 1f;
     }
 
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             // Background Clicked On
             selection.SetActive(false);
             selection2.SetActive(false);
-
+            
             if (selectedTower != null) {
                 selectedTower.GetComponent<Tower>().towerMenu.SetActive(false);
             }
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             } else {
                 // 2nd Tower Selected (Send Troops)
                 selection2.SetActive(true);
-                selection2.transform.position = obj.transform.position;
+                selection2.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, selection2.transform.position.z);
 
                 selectedTower.GetComponent<Tower>().towerMenu.SetActive(false);
 
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
             selection.SetActive(true);
             selection2.SetActive(false);
-            selection.transform.position = obj.transform.position;
+            selection.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, selection.transform.position.z);
         }
     }
 
@@ -82,12 +82,12 @@ public class Player : MonoBehaviour
 
     // Change Selected Percentage Button Color (UI)
     public void SetPercentColor(Button button) {
-        fullButton.image.color = Color.white;
-        threeFourthButton.image.color = Color.white;
-        halfButton.image.color = Color.white;
-        oneFourthButton.image.color = Color.white;
+        fullButton.image.color = new Color(0, 1, 1, 1);
+        threeFourthButton.image.color = new Color(0, 1, 1, 1);
+        halfButton.image.color = new Color(0, 1, 1, 1);
+        oneFourthButton.image.color = new Color(0, 1, 1, 1);
 
-        button.image.color = Color.green;
+        button.image.color = new Color(0, 1, 0.5681005f, 1);
     }
 
     // Send Troops from 1st Tower Selected to 2nd Tower Selected
@@ -98,8 +98,8 @@ public class Player : MonoBehaviour
         int troopAmount = fromTower.GetTroopAmount();
         troopAmount = (int)(troopAmount * troopPercentage);
 
-        fromTower.ChangeTroopAmount(troopAmount, troopType, false);
+        fromTower.ChangeTroopAmount(troopAmount, troopType, "Blue", false);
 
-        currTroops.GetComponent<Troops>().SpawnTroops(troopAmount, troopType, toTower);
+        currTroops.GetComponent<Troops>().SpawnTroops(troopAmount, troopType, toTower, "Blue");
     }
 }

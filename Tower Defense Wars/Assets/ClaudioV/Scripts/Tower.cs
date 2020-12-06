@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.Animations;
 
 /* [Tower Script]
  * Contains Troop Info
@@ -28,22 +29,30 @@ public class Tower : MonoBehaviour
     public string troopType;
     Text troopTypeText;
 
+    public Sprite blueStation;
+    public Sprite redStation;
+    public AnimatorController blueTwinkle;
+    public AnimatorController redTwinkle;
+    GameObject towerImage;
+
     // Start is called before the first frame update
     void Start() {
         troopTower = GetComponent<TroopTower>();
 
-        towerMenu = transform.GetChild(2).gameObject;
+        towerMenu = transform.GetChild(3).gameObject;
         towerMenu.SetActive(false);
 
-        troopAmountText = transform.GetChild(0).GetComponent<Text>();
+        troopAmountText = transform.GetChild(1).GetComponent<Text>();
         troopAmountText.text = ((int)troopAmount).ToString();
 
         troopType = "F";
-        troopTypeText = transform.GetChild(1).GetComponent<Text>();
+        troopTypeText = transform.GetChild(2).GetComponent<Text>();
         if (!CompareTag("Blue")) troopTypeText.text = "";
 
         troopTower.UpdateIncreaseAmount();
         maxTroopAmount = 50f;
+
+        towerImage = transform.GetChild(0).gameObject;
     }
 
     public int GetTroopAmount() {
@@ -52,7 +61,7 @@ public class Tower : MonoBehaviour
 
     // Increase or Descrease Amount of Troops in Tower
     // Increase (Change = true) | Decrease (Change = false)
-    public void ChangeTroopAmount(int amount, string type, bool change) {
+    public void ChangeTroopAmount(int amount, string type, string teamColor, bool change) {
         // Penelty for Converting Troop Types (Reduce Amount)
         if (troopType != type && CompareTag("Blue")) {
             amount = (int)(amount * 0.5f);
@@ -66,9 +75,13 @@ public class Tower : MonoBehaviour
         if (!change) amount *= -1;
 
         // Tower Got Taken Over
-        if (troopAmount + amount < 0 && !CompareTag("Blue")) {
-            tag = "Blue";
-            GetComponent<Image>().color = Color.blue;
+        if (troopAmount + amount < 0 && !change) {
+            gameObject.tag = teamColor;
+            if (teamColor == "Blue") {
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = blueTwinkle;
+            } else if (teamColor == "Red") {
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = redTwinkle;
+            }
 
             SetTroopType(type);
             troopTower.UpdateIncreaseAmount();
