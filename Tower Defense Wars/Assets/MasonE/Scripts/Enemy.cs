@@ -26,7 +26,6 @@ public class Enemy : MonoBehaviour
         speed = 0.2f;
         damage = 1;
         
-        StartCoroutine(DealDamage);
     }
 
     // Called when Troops are Spawned, Sets Troops Info Up
@@ -63,12 +62,6 @@ public class Enemy : MonoBehaviour
             }
 
             Destroy(gameObject);
-        }
-
-        if (transform.position == goingToTower.transform.position)
-        {
-            //deal damage
-            break;
         }
     }
 
