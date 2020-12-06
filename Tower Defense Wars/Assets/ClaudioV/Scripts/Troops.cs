@@ -9,6 +9,11 @@ using UnityEngine.UI;
 
 public class Troops : MonoBehaviour
 {
+    public AudioClip rocketPower;
+    public float volume = 0.5f;
+    public bool toggle = false;
+
+
     Text troopsAmountText;
     int troopsAmount;
     string troopsType;
@@ -35,6 +40,7 @@ public class Troops : MonoBehaviour
         SetSpeed();
 
         this.toTower = toTower;
+        toggle = true;
     }
 
     // Update is called once per frame
@@ -60,6 +66,7 @@ public class Troops : MonoBehaviour
             } else {
                 tower.ChangeTroopAmount(troopsAmount, troopsType, false);
             }
+            toggle = false;
 
             Destroy(gameObject);
         }
@@ -73,4 +80,8 @@ public class Troops : MonoBehaviour
             speed = 0.5f;
         }
     }
+
+
+
+
 }
