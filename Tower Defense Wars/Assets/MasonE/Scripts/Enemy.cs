@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        troopAmountText = transform.GetChild(0).GetComponent<Text>();
+        troopAmountText = transform.GetChild(1).GetComponent<Text>();
 
         enemyAmount = 0;
         enemyType = "F";
@@ -50,11 +51,11 @@ public class Enemy : MonoBehaviour
 
             if (toTower.CompareTag("Blue"))
             {
-                tower.ChangeTroopAmount(enemyAmount, enemyType, true);
+                tower.ChangeTroopAmount(enemyAmount, enemyType, "Red", true);
             }
             else
             {
-                tower.ChangeTroopAmount(enemyAmount, enemyType, false);
+                tower.ChangeTroopAmount(enemyAmount, enemyType, "Red", false);
             }
 
             Destroy(gameObject);
@@ -85,5 +86,7 @@ public class Enemy : MonoBehaviour
                 break;
             }
         }
+
+        return null;
     }
 }

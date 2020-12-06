@@ -61,7 +61,7 @@ public class Tower : MonoBehaviour
 
     // Increase or Descrease Amount of Troops in Tower
     // Increase (Change = true) | Decrease (Change = false)
-    public void ChangeTroopAmount(int amount, string type, bool change) {
+    public void ChangeTroopAmount(int amount, string type, string teamColor, bool change) {
         // Penelty for Converting Troop Types (Reduce Amount)
         if (troopType != type && CompareTag("Blue")) {
             amount = (int)(amount * 0.5f);
@@ -75,11 +75,13 @@ public class Tower : MonoBehaviour
         if (!change) amount *= -1;
 
         // Tower Got Taken Over
-        if (troopAmount + amount < 0 && !CompareTag("Blue")) {
-            tag = "Blue";
-            //GetComponent<Image>().color = Color.blue;
-            towerImage.GetComponent<Image>().sprite = blueStation;
-            towerImage.GetComponent<Animator>().runtimeAnimatorController = blueTwinkle;
+        if (troopAmount + amount < 0 && !change) {
+            gameObject.tag = teamColor;
+            if (teamColor == "Blue") {
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = blueTwinkle;
+            } else if (teamColor == "Red") {
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = redTwinkle;
+            }
 
             SetTroopType(type);
             troopTower.UpdateIncreaseAmount();
