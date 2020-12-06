@@ -63,7 +63,7 @@ public class Troops : MonoBehaviour
         if (transform.position == toTower.transform.position) {
             Tower tower = toTower.GetComponent<Tower>();
 
-            if (toTower.CompareTag("Blue")) {
+            if (toTower.CompareTag(gameObject.tag)) {
                 tower.ChangeTroopAmount(troopsAmount, troopsType, gameObject.tag, true);
             } else {
                 tower.ChangeTroopAmount(troopsAmount, troopsType, gameObject.tag, false);
@@ -72,6 +72,16 @@ public class Troops : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public void takeDamage(int damage)
+    {
+        troopsAmount -= damage;
+        if (troopsAmount <= 0)
+        {
+            Destroy(gameObject);
+        }
+        troopsAmountText.text = troopsAmount.ToString();
     }
 
     // Change Speed (Based on Troop Type)
