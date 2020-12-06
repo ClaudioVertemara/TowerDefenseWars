@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 551613e298877d04fa54c73400a3073b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 2015 Cruiser
+  fontNames:
+  - 2015 Cruiser
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 61eacd31a9296ec469c7c044ee114766, type: 3}
+  - {fileID: 12800000, guid: 93fe61d60e8a9c645a381b60bb2e17d7, type: 3}
+  - {fileID: 12800000, guid: 004823fc646422449996efcafbf72bdc, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
