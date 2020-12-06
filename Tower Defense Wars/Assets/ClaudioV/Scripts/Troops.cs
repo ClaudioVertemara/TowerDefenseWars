@@ -32,7 +32,7 @@ public class Troops : MonoBehaviour
     }
 
     // Called when Troops are Spawned, Sets Troops Info Up
-    public void SpawnTroops(int troopsAmount, string troopsType, GameObject toTower) {
+    public void SpawnTroops(int troopsAmount, string troopsType, GameObject toTower, string tag) {
         this.troopsAmount = troopsAmount;
         troopsAmountText.text = troopsAmount.ToString();
 
@@ -41,6 +41,8 @@ public class Troops : MonoBehaviour
 
         this.toTower = toTower;
         toggle = true;
+
+        gameObject.tag = tag;
     }
 
     // Update is called once per frame
@@ -62,9 +64,9 @@ public class Troops : MonoBehaviour
             Tower tower = toTower.GetComponent<Tower>();
 
             if (toTower.CompareTag("Blue")) {
-                tower.ChangeTroopAmount(troopsAmount, troopsType, true);
+                tower.ChangeTroopAmount(troopsAmount, troopsType, gameObject.tag, true);
             } else {
-                tower.ChangeTroopAmount(troopsAmount, troopsType, false);
+                tower.ChangeTroopAmount(troopsAmount, troopsType, gameObject.tag, false);
             }
             toggle = false;
 
