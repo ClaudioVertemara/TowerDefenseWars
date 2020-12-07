@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7108444625781338262}
   - component: {fileID: 7108444625781338263}
   m_Layer: 0
-  m_Name: Layer Blue 1 standby
+  m_Name: Blue Attack Station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
