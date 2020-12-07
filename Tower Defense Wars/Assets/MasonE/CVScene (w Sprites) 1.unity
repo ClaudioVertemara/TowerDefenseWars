@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bd45d37a0cee143a0f46ea605b8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 
+  towerType: Troop
   towerMenu: {fileID: 0}
   troopAmount: 10
   maxTroopAmount: 0
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bd45d37a0cee143a0f46ea605b8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 
+  towerType: Troop
   towerMenu: {fileID: 0}
   troopAmount: 0
   maxTroopAmount: 0
@@ -5839,7 +5839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bd45d37a0cee143a0f46ea605b8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 
+  towerType: Troop
   towerMenu: {fileID: 0}
   troopAmount: 0
   maxTroopAmount: 0
@@ -6008,7 +6008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bd45d37a0cee143a0f46ea605b8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 
+  towerType: Troop
   towerMenu: {fileID: 0}
   troopAmount: 10
   maxTroopAmount: 0
@@ -6228,7 +6228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bd45d37a0cee143a0f46ea605b8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 
+  towerType: Troop
   towerMenu: {fileID: 0}
   troopAmount: 50
   maxTroopAmount: 0
@@ -6615,7 +6615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bd45d37a0cee143a0f46ea605b8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 
+  towerType: Troop
   towerMenu: {fileID: 0}
   troopAmount: 50
   maxTroopAmount: 0

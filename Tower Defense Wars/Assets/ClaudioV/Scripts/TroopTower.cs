@@ -19,8 +19,8 @@ public class TroopTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Spawn Troops if Tower Owned & Troop Spawn Limit Not Reached
-        if (CompareTag("Blue") && tower.troopAmount <= tower.maxTroopAmount) {
+        // Spawn Troops if Tower Not Neutral & Troop Spawn Limit Not Reached
+        if (!CompareTag("White") && tower.troopAmount <= tower.maxTroopAmount) {
             tower.troopAmount += troopIncrease * Time.deltaTime;
             tower.UpdateTroopText();
         }

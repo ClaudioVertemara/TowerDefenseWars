@@ -94,6 +94,7 @@ MonoBehaviour:
   rocketPower: {fileID: 0}
   volume: 0.5
   toggle: 0
+  redRocket: {fileID: 9100000, guid: 9e8eb736d1bf758438670e2577c9de3f, type: 2}
 --- !u!61 &8009887418761953636
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -92,14 +92,17 @@ public class Player : MonoBehaviour
 
     // Send Troops from 1st Tower Selected to 2nd Tower Selected
     void SendTroops(Tower fromTower, GameObject toTower) {
-        GameObject currTroops = Instantiate(troops, fromTower.transform.position, Quaternion.identity, troopsParent);
-
-        string troopType = fromTower.GetTroopType();
         int troopAmount = fromTower.GetTroopAmount();
-        troopAmount = (int)(troopAmount * troopPercentage);
 
-        fromTower.ChangeTroopAmount(troopAmount, troopType, "Blue", false);
+        if (troopAmount > 0) {
+            GameObject currTroops = Instantiate(troops, fromTower.transform.position, Quaternion.identity, troopsParent);
 
-        currTroops.GetComponent<Troops>().SpawnTroops(troopAmount, troopType, toTower, "Blue");
+            string troopType = fromTower.GetTroopType();
+            troopAmount = (int)(troopAmount * troopPercentage);
+
+            fromTower.ChangeTroopAmount(troopAmount, troopType, "Blue", false);
+
+            currTroops.GetComponent<Troops>().SpawnTroops(troopAmount, troopType, toTower, "Blue");
+        }
     }
 }

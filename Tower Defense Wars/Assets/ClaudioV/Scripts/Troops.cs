@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.Animations;
 
 /* [Troops Script]
  * Troop Objects that are Spawned & Sent to Other Towers
@@ -20,6 +21,8 @@ public class Troops : MonoBehaviour
     float speed;
 
     GameObject toTower;
+    GameObject rocketImage;
+    public AnimatorController redRocket;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,6 +32,8 @@ public class Troops : MonoBehaviour
         troopsAmount = 0;
         troopsType = "F";
         SetSpeed();
+
+        rocketImage = transform.GetChild(0).gameObject;
     }
 
     // Called when Troops are Spawned, Sets Troops Info Up
@@ -43,6 +48,10 @@ public class Troops : MonoBehaviour
         toggle = true;
 
         gameObject.tag = tag;
+
+        if (tag == "Red") {
+            rocketImage.GetComponent<Animator>().runtimeAnimatorController = redRocket;
+        }
     }
 
     // Update is called once per frame

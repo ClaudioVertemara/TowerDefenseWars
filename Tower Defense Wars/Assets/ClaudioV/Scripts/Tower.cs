@@ -20,6 +20,7 @@ public class Tower : MonoBehaviour
 {
     TroopTower troopTower;
     AttackTower attackTower;
+    Enemy enemy;
     public string towerType;
     [HideInInspector]
     public GameObject towerMenu;
@@ -41,11 +42,16 @@ public class Tower : MonoBehaviour
     void Start() {
         troopTower = GetComponent<TroopTower>();
         attackTower = GetComponent<AttackTower>();
+        enemy = GetComponent<Enemy>();
 
         if (towerType == "Troop") {
             attackTower.enabled = false;
         } else {
             troopTower.enabled = false;
+        }
+
+        if (gameObject.tag != "Red") {
+            enemy.enabled = false;
         }
 
         towerMenu = transform.GetChild(3).gameObject;
@@ -88,8 +94,10 @@ public class Tower : MonoBehaviour
             gameObject.tag = teamColor;
             if (teamColor == "Blue") {
                 towerImage.GetComponent<Animator>().runtimeAnimatorController = blueStation;
+                enemy.enabled = false;
             } else if (teamColor == "Red") {
                 towerImage.GetComponent<Animator>().runtimeAnimatorController = redStation;
+                enemy.enabled = true;
             }
 
             SetTroopType(type);

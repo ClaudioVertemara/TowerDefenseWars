@@ -756,6 +756,7 @@ GameObject:
   - component: {fileID: 64216534}
   - component: {fileID: 64216535}
   - component: {fileID: 64216536}
+  - component: {fileID: 64216537}
   m_Layer: 5
   m_Name: Tower (6)
   m_TagString: White
@@ -961,6 +962,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &64216537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64216527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &65650418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1892,7 @@ GameObject:
   - component: {fileID: 138844475}
   - component: {fileID: 138844476}
   - component: {fileID: 138844477}
+  - component: {fileID: 138844478}
   m_Layer: 5
   m_Name: Tower (2)
   m_TagString: White
@@ -2081,6 +2098,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &138844478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138844468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &166914166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2599,7 @@ GameObject:
   - component: {fileID: 217059433}
   - component: {fileID: 217059434}
   - component: {fileID: 217059435}
+  - component: {fileID: 217059436}
   m_Layer: 5
   m_Name: Tower (12)
   m_TagString: White
@@ -2772,6 +2805,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &217059436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217059426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &218131005
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,6 +4798,7 @@ GameObject:
   - component: {fileID: 424862319}
   - component: {fileID: 424862320}
   - component: {fileID: 424862321}
+  - component: {fileID: 424862322}
   m_Layer: 5
   m_Name: Tower (9)
   m_TagString: White
@@ -4955,6 +5004,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &424862322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424862312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &427791402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5557,6 +5621,7 @@ GameObject:
   - component: {fileID: 550737536}
   - component: {fileID: 550737537}
   - component: {fileID: 550737538}
+  - component: {fileID: 550737539}
   m_Layer: 5
   m_Name: Tower (11)
   m_TagString: White
@@ -5762,6 +5827,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &550737539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550737529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &575716998
 GameObject:
   m_ObjectHideFlags: 0
@@ -11255,6 +11335,7 @@ GameObject:
   - component: {fileID: 1264810090}
   - component: {fileID: 1264810091}
   - component: {fileID: 1264810092}
+  - component: {fileID: 1264810093}
   m_Layer: 5
   m_Name: Tower (4)
   m_TagString: Blue
@@ -11460,6 +11541,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1264810093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264810083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1265004983
 GameObject:
   m_ObjectHideFlags: 0
@@ -11606,6 +11702,7 @@ GameObject:
   - component: {fileID: 1281614435}
   - component: {fileID: 1281614436}
   - component: {fileID: 1281614437}
+  - component: {fileID: 1281614438}
   m_Layer: 5
   m_Name: Tower (10)
   m_TagString: White
@@ -11811,6 +11908,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1281614438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281614428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1303310884
 GameObject:
   m_ObjectHideFlags: 0
@@ -12890,6 +13002,7 @@ GameObject:
   - component: {fileID: 1469027277}
   - component: {fileID: 1469027278}
   - component: {fileID: 1469027279}
+  - component: {fileID: 1469027280}
   m_Layer: 5
   m_Name: Tower (8)
   m_TagString: White
@@ -13095,6 +13208,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1469027280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469027270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1475900820
 GameObject:
   m_ObjectHideFlags: 0
@@ -13671,6 +13799,7 @@ GameObject:
   - component: {fileID: 1609152418}
   - component: {fileID: 1609152419}
   - component: {fileID: 1609152420}
+  - component: {fileID: 1609152421}
   m_Layer: 5
   m_Name: Tower (7)
   m_TagString: White
@@ -13876,6 +14005,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1609152421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609152411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1614714003
 GameObject:
   m_ObjectHideFlags: 0
@@ -15021,6 +15165,7 @@ GameObject:
   - component: {fileID: 1690056811}
   - component: {fileID: 1690056812}
   - component: {fileID: 1690056813}
+  - component: {fileID: 1690056814}
   m_Layer: 5
   m_Name: Tower (5)
   m_TagString: Blue
@@ -15226,6 +15371,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1690056814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690056804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1705737104
 GameObject:
   m_ObjectHideFlags: 0
@@ -15243,6 +15403,7 @@ GameObject:
   - component: {fileID: 1705737111}
   - component: {fileID: 1705737112}
   - component: {fileID: 1705737113}
+  - component: {fileID: 1705737114}
   m_Layer: 5
   m_Name: Tower (3)
   m_TagString: White
@@ -15448,6 +15609,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1705737114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705737104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1719077429
 GameObject:
   m_ObjectHideFlags: 0
@@ -15868,6 +16044,8 @@ GameObject:
   - component: {fileID: 1772948261}
   - component: {fileID: 1772948262}
   - component: {fileID: 1772948263}
+  - component: {fileID: 1772948265}
+  - component: {fileID: 1772948264}
   m_Layer: 5
   m_Name: Tower
   m_TagString: Red
@@ -16073,6 +16251,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1772948264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772948254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
+--- !u!114 &1772948265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772948254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1781365580
 GameObject:
   m_ObjectHideFlags: 0
@@ -16959,6 +17167,7 @@ GameObject:
   - component: {fileID: 1904701920}
   - component: {fileID: 1904701921}
   - component: {fileID: 1904701922}
+  - component: {fileID: 1904701923}
   m_Layer: 5
   m_Name: Tower (1)
   m_TagString: Red
@@ -17164,6 +17373,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1904701923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904701913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814f1c155e4a7134baf812418759189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1303310884}
+  troops: {fileID: 2070628520672974461, guid: dc129521eb785fa4584bbd4dbbe55564, type: 3}
+  troopsParent: {fileID: 1081069451}
 --- !u!1 &1906769109
 GameObject:
   m_ObjectHideFlags: 0

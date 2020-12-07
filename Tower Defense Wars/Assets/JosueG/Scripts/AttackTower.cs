@@ -46,7 +46,7 @@ public class AttackTower : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name.Contains("Troops")) {
+        if (col.gameObject.name.Contains("Troops") && col != null) {
             //if the troop is from the same 
             if (col.gameObject.CompareTag(gameObject.tag)) {
                 return;
@@ -57,6 +57,8 @@ public class AttackTower : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        enemyTroops.Remove(col.gameObject);
+        if (col != null) {
+            enemyTroops.Remove(col.gameObject);
+        }
     }
 }
