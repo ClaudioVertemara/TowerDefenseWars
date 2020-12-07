@@ -24,7 +24,7 @@ public class AttackTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyTroops.Count != 0 && !shooting)
+        if (enemyTroops.Count > 0 && !shooting)
         {
             StartCoroutine(fire(fireRate));
         }
@@ -46,12 +46,13 @@ public class AttackTower : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        //if the troop is from the same 
-        if (col.gameObject.CompareTag(gameObject.tag))
-        {
-            return;
+        if (col.gameObject.name.Contains("Troops")) {
+            //if the troop is from the same 
+            if (col.gameObject.CompareTag(gameObject.tag)) {
+                return;
+            }
+            enemyTroops.Add(col.gameObject);
         }
-        enemyTroops.Add(col.gameObject);
     }
 
     void OnTriggerExit2D(Collider2D col)

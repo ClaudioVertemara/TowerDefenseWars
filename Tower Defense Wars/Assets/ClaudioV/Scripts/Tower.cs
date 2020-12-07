@@ -19,6 +19,8 @@ using UnityEditor.Animations;
 public class Tower : MonoBehaviour
 {
     TroopTower troopTower;
+    AttackTower attackTower;
+    public string towerType;
     [HideInInspector]
     public GameObject towerMenu;
     
@@ -29,15 +31,22 @@ public class Tower : MonoBehaviour
     public string troopType;
     Text troopTypeText;
 
-    public Sprite blueStation;
-    public Sprite redStation;
-    public AnimatorController blueTwinkle;
-    public AnimatorController redTwinkle;
+    public AnimatorController blueStation;
+    public AnimatorController redStation;
+    public AnimatorController blueAttackStation;
+    public AnimatorController redAttackStation;
     GameObject towerImage;
 
     // Start is called before the first frame update
     void Start() {
         troopTower = GetComponent<TroopTower>();
+        attackTower = GetComponent<AttackTower>();
+
+        if (towerType == "Troop") {
+            attackTower.enabled = false;
+        } else {
+            troopTower.enabled = false;
+        }
 
         towerMenu = transform.GetChild(3).gameObject;
         towerMenu.SetActive(false);
@@ -78,9 +87,9 @@ public class Tower : MonoBehaviour
         if (troopAmount + amount < 0 && !change) {
             gameObject.tag = teamColor;
             if (teamColor == "Blue") {
-                towerImage.GetComponent<Animator>().runtimeAnimatorController = blueTwinkle;
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = blueStation;
             } else if (teamColor == "Red") {
-                towerImage.GetComponent<Animator>().runtimeAnimatorController = redTwinkle;
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = redStation;
             }
 
             SetTroopType(type);
@@ -109,9 +118,31 @@ public class Tower : MonoBehaviour
     public void ConvertTroopType(string type) {
         int conversionCost = 10;
 
-        if (troopAmount >= conversionCost) {
+        if (troopAmount >= conversionCost && troopType != type) {
             troopAmount -= conversionCost;
+            UpdateTroopText();
             SetTroopType(type);
+        }
+    }
+
+    public void ChangeTowerType(string type) {
+        int conversionCost = 5;
+
+        if (troopAmount >= conversionCost && towerType != type) {
+            troopAmount -= conversionCost;
+            UpdateTroopText();
+
+            if (type == "Attack") {
+                troopTower.enabled = false;
+                attackTower.enabled = true;
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = blueAttackStation;
+            } else {
+                troopTower.enabled = true;
+                attackTower.enabled = false;
+                towerImage.GetComponent<Animator>().runtimeAnimatorController = blueStation;
+            }
+
+            towerType = type;
         }
     }
 
