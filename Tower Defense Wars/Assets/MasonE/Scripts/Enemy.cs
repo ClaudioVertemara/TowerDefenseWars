@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
             }
             else if (currentTower.tag == "Blue")
             {
-                string towerType = currentTower.getComponent<Tower>().towerType;
+                string towerType = currentTower.GetComponent<Tower>().towerType;
                 
                 if (towerType == "Attack")
                 {
