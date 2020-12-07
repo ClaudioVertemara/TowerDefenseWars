@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/JosueG/Scenes/MenuScene.unity
     guid: cad57e47bcd84d04d9b8caf2483118f4
   - enabled: 1
-    path: Assets/ClaudioV/CVScene.unity
-    guid: add63abcebb8687499a6ab3bb0a9bc0b
+    path: Assets/Scenes/Game.unity
+    guid: be432e1817bed6d4d89afb526162e206
   m_configObjects: {}
