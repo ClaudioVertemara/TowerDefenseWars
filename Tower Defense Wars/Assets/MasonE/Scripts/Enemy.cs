@@ -13,12 +13,16 @@ public class Enemy : MonoBehaviour
     public Transform troopsParent;
 
     float timer;
+    GameObject currentTower;
 
     // Start is called before the first frame update
     void Awake()
     {
         tower = GetComponent<Tower>();
         timer = Random.Range(7f, 15f);
+
+        int random = Random.Range(2, 13);
+        currentTower = towers.transform.GetChild(random).gameObject;
     }
 
     // Update is called once per frame
@@ -35,9 +39,18 @@ public class Enemy : MonoBehaviour
 
     GameObject TargetTower()
     {
-        GameObject currentTower = towers.transform.GetChild(0).gameObject;
+        if (currentTower.tag == "Red") {
+            while (true) {
+                int random = Random.Range(0, 13);
+                currentTower = towers.transform.GetChild(random).gameObject;
 
-        for (int i = 0; i < towers.transform.childCount; i++)
+                if (currentTower.tag != "Red") {
+                    break;
+                }
+            }
+        }
+
+        /*for (int i = 0; i < towers.transform.childCount; i++)
         {
 
             currentTower = towers.transform.GetChild(i).gameObject;
@@ -58,7 +71,7 @@ public class Enemy : MonoBehaviour
                     return currentTower;
                 }
             }
-        }
+        }*/
 
         return currentTower;
     }

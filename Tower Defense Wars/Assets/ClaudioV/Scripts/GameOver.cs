@@ -9,6 +9,9 @@ public class GameOver : MonoBehaviour
     public Text gameOverText;
     public Transform towers;
 
+    public AudioSource winAudio;
+    public AudioSource loseAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,9 @@ public class GameOver : MonoBehaviour
 
         if (!won) {
             gameOverText.text = "You Lost! \n:(";
+            loseAudio.Play();
+        } else {
+            winAudio.Play();
         }
     }
 }

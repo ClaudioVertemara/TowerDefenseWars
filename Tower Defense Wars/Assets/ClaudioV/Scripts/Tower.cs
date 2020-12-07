@@ -41,6 +41,9 @@ public class Tower : MonoBehaviour
     public GameOver gameOver;
     CircleCollider2D cc;
 
+    public AudioSource audioImpact;
+    public AudioSource audioTakeOver;
+
     // Start is called before the first frame update
     void Start() {
         troopTower = GetComponent<TroopTower>();
@@ -109,6 +112,9 @@ public class Tower : MonoBehaviour
             SetTroopType(type);
             troopTower.UpdateIncreaseAmount();
             gameOver.CheckIfWonOrLost();
+            audioTakeOver.Play();
+        } else if (!change && teamColor != gameObject.tag) {
+            audioImpact.Play();
         }
 
         troopAmount = Mathf.Abs(troopAmount + amount);
