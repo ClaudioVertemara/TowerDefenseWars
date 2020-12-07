@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     int enemyAmount;
     string enemyType;
     float speed;
+    int damage;
 
     GameObject toTower;
 
@@ -23,6 +24,8 @@ public class Enemy : MonoBehaviour
         enemyAmount = 0;
         enemyType = "F";
         speed = 0.2f;
+        damage = 1;
+        
     }
 
     // Called when Troops are Spawned, Sets Troops Info Up
@@ -80,10 +83,23 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < Tower.transform.childCount; i++)
         {
             GameObject currentTower = Tower.transform.GetChild(i).gameObject;
-            if (currentTower.tag == "Blue" || currentTower.tag == "white")
+            if (currentTower.tag == "White")
             {
                 return currentTower;
                 break;
+            }
+            else if (currentTower.tag == "Blue")
+            {
+                string towerType = currentTower.GetComponent<Tower>().towerType;
+                
+                if (towerType == "Attack")
+                {
+                    return currentTower;
+                } 
+                else if (towerType == "Troop")
+                {
+                    return currentTower;
+                }
             }
         }
 
