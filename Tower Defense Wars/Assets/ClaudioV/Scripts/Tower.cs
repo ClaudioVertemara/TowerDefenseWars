@@ -38,14 +38,20 @@ public class Tower : MonoBehaviour
     public AnimatorController redAttackStation;
     GameObject towerImage;
 
+    public GameOver gameOver;
+    CircleCollider2D cc;
+
     // Start is called before the first frame update
     void Start() {
         troopTower = GetComponent<TroopTower>();
         attackTower = GetComponent<AttackTower>();
         enemy = GetComponent<Enemy>();
 
+        cc = GetComponent<CircleCollider2D>();
+
         if (towerType == "Troop") {
             attackTower.enabled = false;
+            cc.enabled = false;
         } else {
             troopTower.enabled = false;
         }
@@ -102,6 +108,7 @@ public class Tower : MonoBehaviour
 
             SetTroopType(type);
             troopTower.UpdateIncreaseAmount();
+            gameOver.CheckIfWonOrLost();
         }
 
         troopAmount = Mathf.Abs(troopAmount + amount);
@@ -143,10 +150,12 @@ public class Tower : MonoBehaviour
             if (type == "Attack") {
                 troopTower.enabled = false;
                 attackTower.enabled = true;
+                cc.enabled = true;
                 towerImage.GetComponent<Animator>().runtimeAnimatorController = blueAttackStation;
             } else {
                 troopTower.enabled = true;
                 attackTower.enabled = false;
+                cc.enabled = false;
                 towerImage.GetComponent<Animator>().runtimeAnimatorController = blueStation;
             }
 
