@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
             }
             else if (currentTower.tag == "Blue")
             {
-                return currentTower;
+                currentTower.getComponent<Tower>().towerType
                 break;
             }
         }
