@@ -16,6 +16,6 @@ Double left click a tower you own (blue) to change the tower type or the troop t
 
 There are also 2 types of troops, Fast and Strong. Fast are the default troops that spawn and move faster, but do less damage. Strong troops spawn slower and move slower but cause more damage. 
 
-There is a conversion cost to changing the tower or troop type.
+There is a conversion cost to changing the tower & troop type.
 
 Left click on the background to deselect selected towers.
