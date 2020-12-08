@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.Animations;
 
 /* [Tower Script]
  * Contains Troop Info
@@ -32,10 +31,10 @@ public class Tower : MonoBehaviour
     public string troopType;
     Text troopTypeText;
 
-    public AnimatorController blueStation;
-    public AnimatorController redStation;
-    public AnimatorController blueAttackStation;
-    public AnimatorController redAttackStation;
+    public RuntimeAnimatorController blueStation;
+    public RuntimeAnimatorController redStation;
+    public RuntimeAnimatorController blueAttackStation;
+    public RuntimeAnimatorController redAttackStation;
     GameObject towerImage;
 
     public GameOver gameOver;

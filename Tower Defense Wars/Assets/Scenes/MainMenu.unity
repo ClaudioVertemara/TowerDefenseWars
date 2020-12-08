@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eec862140be96248977b89876c73a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  link: 
+  link: https://github.com/Riley-Six
 --- !u!114 &42951925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eec862140be96248977b89876c73a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  link: 
+  link: https://www.linkedin.com/in/riley-galloway-66b736146
 --- !u!114 &464636373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,7 +3653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eec862140be96248977b89876c73a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  link: 
+  link: https://www.linkedin.com/in/mason-emura-314768146/
 --- !u!114 &1709316557
 MonoBehaviour:
   m_ObjectHideFlags: 0

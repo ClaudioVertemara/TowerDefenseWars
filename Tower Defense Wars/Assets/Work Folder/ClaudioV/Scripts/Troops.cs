@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.Animations;
 
 /* [Troops Script]
  * Troop Objects that are Spawned & Sent to Other Towers
@@ -22,7 +21,7 @@ public class Troops : MonoBehaviour
 
     GameObject toTower;
     GameObject rocketImage;
-    public AnimatorController redRocket;
+    public RuntimeAnimatorController redRocket;
 
     // Start is called before the first frame update
     void Awake()
