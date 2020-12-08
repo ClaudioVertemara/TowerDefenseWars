@@ -3,7 +3,9 @@ CST 426 - Project 2
 
 # Download and Install Instructions
 Download the ZIP file inside the executable folder, unzip it and click on the executable to run the game.
+
 or
+
 Download the Tower Defense Wars folder and use Unity to open the Unity project and play in the unity editor. It is recommended to use the same version the game was built in, Unity Version 2019.4.13f1, if possible.
 
 # Description
