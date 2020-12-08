@@ -6,7 +6,7 @@ Download the ZIP file inside the executable folder, unzip it and click on the ex
 
 or
 
-Download the Tower Defense Wars folder and use Unity to open the Unity project and play in the unity editor. It is recommended to use the same version the game was built in, Unity Version 2019.4.13f1, if possible.
+Download the Tower Defense Wars folder and use Unity to open the Unity project and play it in the Unity editor. It is recommended to use the same version the game was built in, Unity Version 2019.4.13f1, if possible.
 
 # Description
 This game was made as the 2nd project for the class CST 426: Advanced Game Development at CSUMB. It was inspired by the games Bloons Tower Defense and Mushroom Wars and was built by Claudio Vertemara, Josue Gonzalez, Mason Emura, and Riley Galloway.
