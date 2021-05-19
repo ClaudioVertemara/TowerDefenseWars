@@ -1,15 +1,12 @@
 # Tower Defense Wars
-CST 426 - Project 2
+This game was made as the 2nd project for CST 426 - Advanced Game Development at CSU Monterey Bay. It was inspired by the games Bloons Tower Defense and Mushroom Wars and was built by Claudio Vertemara, Josue Gonzalez, Mason Emura, and Riley Galloway.
 
 # Download and Install Instructions
-Download the ZIP file inside the executable folder, unzip it and click on the executable to run the game.
+Download the ZIP file inside the executable folder, unzip it, and click on the executable to run the game.
 
 or
 
 Download the Tower Defense Wars folder and use Unity to open the Unity project and play it in the Unity editor. It is recommended to use the same version the game was built in, Unity Version 2019.4.13f1, if possible.
-
-# Description
-This game was made as the 2nd project for the class CST 426: Advanced Game Development at CSUMB. It was inspired by the games Bloons Tower Defense and Mushroom Wars and was built by Claudio Vertemara, Josue Gonzalez, Mason Emura, and Riley Galloway.
 
 # Controls / How to Play
 In this game, you play as the blue army and your goal is to control the entire map by spawning troops and taking over all the towers on the map. The red team will likewise spawn troops and attempt to take over towers on the map and try to take over the entire map as well.
